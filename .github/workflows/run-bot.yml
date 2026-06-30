@@ -24,9 +24,9 @@ jobs:
         working-directory: sample-1
 
         env:
-          ANDX_USER_NAME: gudisitejaswini98@gmail.com
-          ANDX_TOKEN: FAEB355A2269AFB39331CEE533A6D1906FF8152D0449363339B74A42639F63FB
-          ANDX_API_KEY: 3lStCa5L6v5ppn9CiiMGzg
-          ANDX_API_SECRET: XP9PEMrTtvbUceoFdiSvmA
-          ANDX_PASSPHRASE: Iamtrading123
+          ANDX_USER_NAME: ${{ secrets.ANDX_USER_NAME }}
+          ANDX_TOKEN: ${{ secrets.ANDX_TOKEN }}
+          ANDX_API_KEY: ${{ secrets.ANDX_API_KEY }}
+          ANDX_API_SECRET: ${{ secrets.ANDX_API_SECRET }}
+          ANDX_PASSPHRASE: ${{ secrets.ANDX_PASSPHRASE }}
         run: python main.py
