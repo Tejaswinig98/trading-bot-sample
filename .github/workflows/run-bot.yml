@@ -1,0 +1,32 @@
+name: Run ANDX Bot
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: sample-1
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        working-directory: sample-1
+
+        env:
+          ANDX_USER_NAME: gudisitejaswini98@gmail.com
+          ANDX_TOKEN: FAEB355A2269AFB39331CEE533A6D1906FF8152D0449363339B74A42639F63FB
+          ANDX_API_KEY: 3lStCa5L6v5ppn9CiiMGzg
+          ANDX_API_SECRET: XP9PEMrTtvbUceoFdiSvmA
+          ANDX_PASSPHRASE: Iamtrading123
+        run: python main.py
